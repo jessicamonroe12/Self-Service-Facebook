@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<style>
+body {
+  background: #3b5998;
+}
+#display-image{
+  width: 400px;
+  height: 225px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+</style>
+</head>
+
+
+<body>
+	<title>Self-Service Facebook</title>
+<head>
+	<div class="content">
+	<h1>Welcome to Self Service Facebook!</h1>
+  		<p>Hello! Tired of people ignoring you on social media? Is it slowly pushing you towards a lonely existence? You can forget all about that with our new self-service Facebook page! Now you can like your post for as long as you want (: </p>
+	<h2>What's on your noggin? Post About it!</h2>
+<input type="text" name="" id = "text" placeholder="Let your thoughts be free (:" style="width: 80%">
+<input type="button" name="" value="submit" onclick="print()">
+<p id = "demo"></p>
+
+<script type="text/javascript">
+
+	function print(){
+		let x = document.getElementById('text').value;
+		document.getElementById('demo').innerHTML = x;
+		document.getElementById('text').value = '';
+	}
+</script>
+<body>
+<script type="text/javascript">
+    var clicks = 0;
+    function Like() {
+        clicks += 1;
+        document.getElementById("Likes").innerHTML = clicks;
+    };
+    </script>
+    <button type="button" onClick="Like()">Click here for a like!</button>
+    <p>Likes: <a id="Likes">0</a></p>
+</body>
+
+<h2>Post A Pic!</h2>
+<p>Nothing says "I'm great to be friends with" like a fun photo! Upload one now and drop a like!</p>
+<input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+
+  <div id="display-image"></div>
+  <script type="text/javascript">
+  	const image_input = document.querySelector("#image-input");
+
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
+
+var clicks = 0;
+    function Smile() {
+        clicks += 1;
+        document.getElementById("Smiles").innerHTML = clicks;
+    };
+    </script>
+    <button type="button" onClick="Smile()">Click here for a like!</button>
+    <p>Likes: <a id="Smiles">0</a></p>
+		<p>© 2022 Self Service Facebook LLC</p>
+
+	</div>
+
+	</head>
+</body>
+</html>
